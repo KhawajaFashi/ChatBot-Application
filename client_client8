@@ -1,0 +1,6 @@
+Error receiving message: [WinError 10057] A request to send or receive data was disallowed because the socket is not connected and (when sending on a datagram socket using a sendto call) no address was supplied
+quitting
+Error receiving message: [WinError 10054] An existing connection was forcibly closed by the remote host
+quitting
+Error: [WinError 10054] An existing connection was forcibly closed by the remote host
+quitting
