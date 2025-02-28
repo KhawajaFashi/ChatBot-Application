@@ -138,7 +138,7 @@ class Forwarder(object):
 
         recv_out = open(self.recv_outfile, "w")
         receiver = subprocess.Popen(
-            ["python", self.receiver_path, "-p", str(self.receiver_port)],
+            ["python3", self.receiver_path, "-p", str(self.receiver_port)],
             stdout=recv_out,
         )
         # print(self.receiver_path)
@@ -153,7 +153,7 @@ class Forwarder(object):
             if "duplicate" in i:
                 u = i[:7]
             self.senders[i] = subprocess.Popen(
-                ["python", self.sender_path, "-p", str(self.port), "-u", u],
+                ["python3", self.sender_path, "-p", str(self.port), "-u", u],
                 stdin=subprocess.PIPE,
                 stdout=sender_out[i],
             )
@@ -236,7 +236,7 @@ if __name__ == "__main__":
     delete_with_rm_rf()
 
     def usage():
-        print("Usage: python TestChatApp.py [options]")
+        print("Usage: python3 TestChatApp.py [options]")
         print("Options:")
         print(
             "  --client CLIENT   The path to the Client implementation (default: client.py)"
@@ -253,9 +253,9 @@ if __name__ == "__main__":
         print("  --verbose         Enable verbose output for tests.")
         print("  -h, --help        Show this help message and exit.")
         print("\nExample:")
-        print("  python TestChatApp.py --client client.py --server server.py --verbose")
+        print("  python3 TestChatApp.py --client client.py --server server.py --verbose")
         print(
-            "  python TestChatApp.py --client client.py --server server.py --test SingleClient MultipleClients --verbose"
+            "  python3 TestChatApp.py --client client.py --server server.py --test SingleClient MultipleClients --verbose"
         )
 
     parser = argparse.ArgumentParser(
